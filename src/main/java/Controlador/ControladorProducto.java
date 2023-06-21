@@ -49,8 +49,8 @@ public class ControladorProducto {
             datos.Guardar(transaccion);
             producto.calcularPrecioTotal(cantidad);
         } else {
-            System.out.println("Producto no hayado");
-            System.out.println("Cantidad");
+            System.out.println("No hay suficiente producto en el almacen");
+            
         }
     }
     //Se va enlistando cada uno de los productos
