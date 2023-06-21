@@ -19,6 +19,7 @@ public class VistaTienda {
     // creamos un atributo controlador con el tipo de clase del ControladorProducto
     private ControladorProducto controlador;
     //Mandamos el controlador en la firma del metodo
+    private Producto producto;
 
     public VistaTienda(ControladorProducto controlador) {
         this.controlador = controlador;
@@ -65,11 +66,16 @@ public class VistaTienda {
 
     public void venderProducto() {
         Scanner scanner = new Scanner(System.in);
+        
         System.out.print("Introduzca el codigo: ");
         String codigo = scanner.nextLine();
         System.out.print("Introduzca la cantidad: ");
-        int cantidad = scanner.nextInt();
-        controlador.venderProducto(codigo, cantidad);
+        int cantidadProducto = scanner.nextInt();
+        if(producto.getCantidad()>cantidadProducto){
+            System.out.println("No hay cantidad suficiente");
+            
+        }else
+        controlador.venderProducto(codigo, cantidadProducto);
     }
 }
 
